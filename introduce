@@ -1,0 +1,55 @@
+1 简介
+
+prodigal(Prokaryotic Dynamic Programming Genefinding Algorithm)用于原核微生物基因组和宏基因组的基因预测, 是Oak Ridge National Laboratory和University of Tennessee-Knoxville 在2007年联合开发的。更多信息（https://github.com/hyattpd/Prodigal/wiki/introduction）
+
+2下载及安装
+
+代码托管于github上，主页地址为：https://github.com/hyattpd/Prodigal
+
+从github上下载压缩包
+
+使用tar -xzvf解压，进入文件目录，使用make install安装即可。
+
+3 使用方法
+
+prodigal [-a trans_file] [-c] [-d nuc_file] [-f output_type]
+
+                [-g tr_table] [-h] [-i input_file] [-m] [-n] [-o output_file]
+
+                [-p mode] [-q] [-s start_file] [-t training_file] [-v]
+
+
+
+        -a: 输出的蛋白序列文件名
+
+        -c: 封闭的两端。即不允许基因的一端没有起始和终止结构.
+
+        -d: 输出的核酸序列文件名
+
+        -f:  输出文件格式(gbk, gff, or sco)，默认gbk.
+
+        -g:  指定密码子表(默认11).
+
+        -h:  帮助.
+
+        -i:  指定FASTA/Genbank输入文件(默认标准输入).
+
+        -m:  屏蔽碱基N.
+
+        -n:  Bypass Shine-Dalgarno trainer and force a full motif scan.
+
+        -o:  指定输出文件（默认标准输出）.
+
+        -p:  选择过程（单个样品或meta样品），默认单个样品。
+
+        -q:  Run quietly (suppress normal stderr output).
+
+        -s:  将所有带有得分的潜在基因写入到指定文件中
+
+        -t:  写入一个训练文件。否则读取并使用一个指定的训练文件
+
+        -v:  打印版本号
+        
+   example以基因组contig文件为例：
+
+   prodigal -a protein_seq.fasta -d nucleotide_seq.fasta -o genes.gff -s poteintial.stat -i contig.fasta")
